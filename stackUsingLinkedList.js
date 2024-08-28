@@ -38,7 +38,7 @@ class Stack{
             this.top = null;
             this.bottom = null;
             this.length--;
-            return 0
+            return poppedElement
         }else{            
             const poppedElement = this.top;
             this.top = poppedElement.next;
