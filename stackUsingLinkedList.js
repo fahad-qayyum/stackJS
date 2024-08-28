@@ -16,7 +16,7 @@ class Stack{
         // if the stack length is 0, create a node, make it the top and bottom and increase the length
         // if not, create a node, make it the top, point its next to the next element and increase the length
         const newNode = new Node(element);
-        if(this.length == 0){
+        if(!this.top){
             this.top = newNode;
             this.bottom = newNode;
         }else{
@@ -31,9 +31,9 @@ class Stack{
         // if length == 1, store the element in a var, delete the last element and make the top and bottom as null
         // else, store this.head.next in a var, this.head = var
         // length--, return the var
-        if(this.length == 0){
+        if(!this.top){
             return null
-        }else if(this.length == 1){
+        }else if(this.top == this.bottom){
             const poppedElement = this.top;
             this.top = null;
             this.bottom = null;
@@ -50,7 +50,7 @@ class Stack{
     peek(){
         // if no element return null
         // if length > 0, return the top
-        return this.length > 0 ? this.top.value : null
+        return this.top ? this.top.value : null
     }
 }
 
